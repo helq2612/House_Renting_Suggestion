@@ -49,6 +49,9 @@ Area | Longitude | Latitude | Safety Rate
 And its score is 69.9%.
 
 For the Neural Network model, the score is 73.3%, which is better than the linear regression model(69.9%)
+<img src="https://github.com/helq2612/House_Renting_Suggestion/blob/master/images/Figure9.png" alt="Drawing" style="width: 100px;"/>
+
+
 
 ![alt text](https://github.com/helq2612/House_Renting_Suggestion/blob/master/images/Figure9.png =100x120)
 
