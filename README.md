@@ -55,5 +55,5 @@ For the Neural Network model, the score is 73.3%, which is better than the linea
 
 Above figure shows part of our result of the predicted data. The left column shows the pre- dicted price of the linear regression model, the right column shows the predicted price of the neural network regression model and the middle column shows the true predicated price. This table clearly demonstrates the more accuracy neural network models achieved in predicating the price compared to the linear regression model. Therefore, there might be some features not linearly related to the target and neural network can apply in high-dimension and learn a better fix on X and Y.
 
-[comment]: <> ![alt text](https://github.com/helq2612/House_Renting_Suggestion/blob/master/images/Figure9.png =100x120)
+[//]: # ![alt text](https://github.com/helq2612/House_Renting_Suggestion/blob/master/images/Figure9.png =100x120)
 
