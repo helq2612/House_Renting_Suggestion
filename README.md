@@ -20,6 +20,35 @@ scrapy crawl second --nolog --output=second.csv
 **Warning 2 :** Some data are missing, such as bedroom number, bathroom number, etc. Remove them;  
 **Warning 3 :** Some duplications might be exist. Use Excel commend to remove.  
 
+## Data Collection
+### Add Safety Rate
+Since safety rate is reasonable factor impacting house renting price, we introduced this attribute into our model. The safety rate of Corvallis is available on [Neighbourhoodscout](https://www.neighborhoodscout.com/or/corvallis).  
+However, as we can see, the shape of each zone is regular. One duable method is deviding big zone into small parts, and map the latitude and longitude value with the apartment location.  
+Here we chose an easy and approximate method:
+* Divide each zone to small part, 
+* Find the center point of each part(shown by red point), 
+* Calculate the distance (Euler distance) between the apartment and all center points,
+* Get the center point with minimum distance,
+* Label the safety rate of this apartment with the safety rate of that center. 
+### MySQL Queries
+After data clean, and add safety rate, we got two csv files, first.csv and second.csv. Import them into MySQL workbench, and simply using following queries:  
+```python
+select first.pid, price, area, safety, latitude, longitude
+from first, second
+where first.pid = second.pid  and safety <> ""
+```
+Then we got total 656 data entries.
 
+## Data Analysis
+We divided data into two parts: 606 as training examples and 50 as testing examples.  
+For the linear regression model, we got the weight as shown below:  
+Area | Longitude | Latitude | Safety Rate
+------------ | ------------- | ------------- | ------------- 
+494.331 | -144.024 | -108.401 | -14.388
 
+And its score is 69.9%.
+
+For the Neural Network model, the score is 73.3%, which is better than the linear regression model(69.9%)
+
+[images](\images\Figure9.png)
 
