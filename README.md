@@ -16,9 +16,10 @@ In this csv file, the 4th column contains all the url links of each poster. Then
 ```python
 scrapy crawl second --nolog --output=second.csv
 ```
-**Warning 1 :** There are some white space and line breaks in the data  
-**Warning 2 :** Some data are missing, such as bedroom number, bathroom number  
-**Warning 3 :** Some duplications might be exist, but can be cleaned by Excel commend  
+**Warning 1 :** There are some white spaces and line breaks in the data (use _clean.py_ to clean).;  
+**Warning 2 :** Some data are missing, such as bedroom number, bathroom number, etc. Remove them;  
+**Warning 3 :** Some duplications might be exist. Use Excel commend to remove.  
+
 
 
 

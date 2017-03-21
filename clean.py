@@ -16,15 +16,10 @@ def clean():
 				continue
 			s = row[0]
 			
-			#print "idx =", idx, "len = ", len(s)
-			#print "row =", s#, "row type =", type(row[0])
 			s = s.replace("\n", "")
 			s = s.replace(" ", "")
 			s = s.replace(",", "")
 			s = s.replace("-", "")
-			#print "row =", s#, "row type =", type(row[0])
-			#print type(s), len(s)
-			#print "*******************"
 			s = "".join(s.split())
 			pattern = re.compile(r'r*.*?ft')
 			
@@ -46,10 +41,7 @@ def clean():
 			mm = mm.replace("b","")
 			mm = mm.replace("ft","")
 			mm = mm.replace(" ","")
-			
-			#else:
-			#	print "not found, m =", m
-			#print "idx =", idx,"M=",m, "pid=",row[5],"price=", row[4]
+
 			if idx != 0:
 				if m != "":
 					row[0] = m 
@@ -60,14 +52,12 @@ def clean():
 					row[1] = mm
 				else:
 					row[1] = ""
-				#print "len=", len(row)
-				#dd = [str(m), str(row[5]),str(row[4])]
+
 				writer.writerow(row)
 
 			writer.writerow(row)
 			idx += 1
-			#if idx == 10:
-			#	break
+
 	shutil.move(tempfile.name, filename)
 	pass
 
